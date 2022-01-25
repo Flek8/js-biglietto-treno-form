@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietto Treno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row row-top">
+            <h1>CALCOLA IL PREZZO DEL BIGLIETTO</h1>
+            <div class="contenitore1">
+                <div class="sezione">
+                    <span>Nome Cognome</span>
+                    <input type="text" id="name">
+                </div>
+                <div class="sezione">
+                    <span>Km da percorrere</span>
+                    <input type="number" id="km">
+                </div>
+                <div class="sezione">
+                    <span>Fascia d'età</span>
+                    <select name="eta" id="eta">
+                        <option value="default">Seleziona l'età</option>
+                        <option value="min">Minorenne</option>
+                        <option value="mag">Maggiorenne</option>
+                        <option value="over">Over 65</option>
+                    </select>
+                </div> <br>
+                <button id="genera">Genera</button>
+                <button id="annulla">Annulla</button>
+            </div>
+        </div>
+
+        <div class="row row-bottom">
+            <h1>IL TUO BIGLIETTO</h1>
+            <div class="contenitore2">
+                <h3>DETTAGLIO PASSEGGERI</h3>
+                <div class="biglietto">
+                    <div class="card-nome">
+                        <h3>NOME PASSEGGERO</h3>
+                        <h3 id="nome"></h3>
+                    </div>
+
+                    <div class="card" >
+                        <h3>Offerta</h3>
+                        <span id="offerta"></span>
+                    </div>
+
+                    <div class="card" id="carrozza">
+                        <h3>Carrozza</h3>
+                    </div>
+
+                    <div class="card" id="CP">
+                        <h3>Codice CP</h3>
+                    </div>
+
+                    <div class="card" id="costo">
+                        <h3>Costo Biglietto</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
