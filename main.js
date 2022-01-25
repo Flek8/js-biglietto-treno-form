@@ -1,35 +1,59 @@
-let nome = document.getElementById('name').value;
-let km = document.getElementById('km').value;
-let eta = document.getElementById('eta').value;
-let offerta = document.getElementById('offerta');
-let genera = document.getElementById('genera');
-
-let nominativo = document.getElementById('nome');
-let datiNominativo = document.createElement('span');
+const genera = document.getElementById('genera');
 
 genera.addEventListener('click',
     function() {
-        datiNominativo.append(nome);
-        nominativo.append(datiNominativo);
-    },
-    function() {
+        const nome = document.getElementById('name').value;
+        console.log(nome);
+
+        const km = document.getElementById('km').value;
+        console.log(km);
+
+        const fasciaEta = document.getElementById('eta').value;
+        console.log(fasciaEta);
         
+        const prezzoKm = 0.21;
+
+        let prezzoBiglietto = km * prezzoKm;
+        let offerta = 'Biglietto Standard'
+
+        if (fasciaEta == 'min') {
+
+            prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.2);
+            offerta = 'Sconto Minorenni'
+
+        } else if (fasciaEta == 'over') {
+
+            prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 0.4);
+            offerta = 'Sconto Over 65'
+
+        }
+
+        let biglietto = document.getElementById('biglietto');
+        biglietto.classList.remove('hidden');
+
+
+        document.getElementById('nome').innerHTML = nome;
+
+        document.getElementById('costo').innerHTML = prezzoBiglietto.toFixed(2) + '&euro;'
+
+        document.getElementById('offerta').innerHTML = offerta;
+
+        document.getElementById('carrozza').innerHTML = (Math.floor(Math.random()*9)+1);
+
+        document.getElementById('CP').innerHTML = ((Number(90000) + Number(Math.random()*10000)).toFixed(0));
     }
 );
 
+const annulla = document.getElementById('annulla');
 
+annulla.addEventListener('click',
+    function() {
 
+        let biglietto = document.getElementById('biglietto');
+        biglietto.classList.add('hidden');
 
-/*
-function() {
-    if (eta == 'min') 
-        document.getElementById('offerta').innerHTML = "Sconto 20% per minorenni";
-    else if (eta == 'mag') 
-        document.getElementById('offerta').innerHTML = "Biglietto Standard";
-    else if (eta == 'over') 
-         document.getElementById('offerta').innerHTML = "Sconto 40% per ver 65";
-    else {
-        alert("Selezionare una fascia d'età corretta");
+        document.getElementById('name').value = '';
+        document.getElementById('km').value = '';
+        document.getElementById('eta').value = 'default';
     }
-}
-*/
+);

@@ -33,6 +33,10 @@ h1 {
     color: rgb(184, 28, 114);
 }
 
+.sezione {
+    display: inline-block;
+    margin: 10px 50px 30px ;
+}
 .sezione span {
     display: block;
     margin-bottom: 10px;
@@ -77,3 +81,6 @@ button {
     margin-bottom: 40px;
 }
 
+.hidden {
+    visibility: hidden;
+}

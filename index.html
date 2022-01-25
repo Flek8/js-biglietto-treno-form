@@ -14,11 +14,11 @@
             <div class="contenitore1">
                 <div class="sezione">
                     <span>Nome Cognome</span>
-                    <input type="text" id="name">
+                    <input type="text" id="name" placeholder="Inserisci Nome e Cognome">
                 </div>
                 <div class="sezione">
                     <span>Km da percorrere</span>
-                    <input type="number" id="km">
+                    <input type="number" id="km" min="0" max="1000" placeholder="0">
                 </div>
                 <div class="sezione">
                     <span>Fascia d'età</span>
@@ -36,7 +36,7 @@
 
         <div class="row row-bottom">
             <h1>IL TUO BIGLIETTO</h1>
-            <div class="contenitore2">
+            <div id="biglietto" class="contenitore2 hidden">
                 <h3>DETTAGLIO PASSEGGERI</h3>
                 <div class="biglietto">
                     <div class="card-nome">
@@ -49,16 +49,19 @@
                         <span id="offerta"></span>
                     </div>
 
-                    <div class="card" id="carrozza">
+                    <div class="card">
                         <h3>Carrozza</h3>
+                        <span id="carrozza"></span>
                     </div>
 
-                    <div class="card" id="CP">
+                    <div class="card">
                         <h3>Codice CP</h3>
+                        <span id="CP"></span>
                     </div>
 
-                    <div class="card" id="costo">
+                    <div class="card">
                         <h3>Costo Biglietto</h3>
+                        <span id="costo"></span>
                     </div>
                 </div>
             </div>
